@@ -1,3 +1,3 @@
-FROM php:7.0-apache
-COPY public-html/ /usr/local/apache2/htdocs/public-html/
+FROM httpd:2.4
+COPY ./public-html/ /usr/local/apache2/htdocs/
 EXPOSE 80
