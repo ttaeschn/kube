@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: ttapp
-        image: ttdocker
+        image: eu.grc.io/tt-jenkins/ttdocker
         ports:
         - containerPort: 80
