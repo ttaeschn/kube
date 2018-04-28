@@ -1,3 +1,4 @@
-FROM httpd:2.4
-COPY ./public-html/ /usr/local/apache2/htdocs/
-EXPOSE 80
+FROM node:6.9.2
+EXPOSE 8080
+COPY server.js .
+CMD node server.js
