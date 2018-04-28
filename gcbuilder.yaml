@@ -1,0 +1,4 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'eu.gcr.io/tt-jenkins/ttdocker:lts', '.']
+images: ['eu.gcr.io/tt-jenkins/ttdocker']
