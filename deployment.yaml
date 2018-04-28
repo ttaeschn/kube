@@ -21,6 +21,7 @@ spec:
     spec:
       containers:
       - image: eu.gcr.io/tt-jenkins/ttdocker:lts
+        imagePullPolicy: always
         name: ttapp
         ports:
         - containerPort: 80
