@@ -20,7 +20,7 @@ spec:
         run: ttapp
     spec:
       containers:
-      - image: eu.gcr.io/tt-jenkins/cloudjenkins:lts
+      - image: eu.gcr.io/tt-jenkins/ttdocker:lts
         name: ttapp
         ports:
         - containerPort: 80
