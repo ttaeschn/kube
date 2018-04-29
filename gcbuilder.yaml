@@ -1,4 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'eu.gcr.io/tt-jenkins/ttdocker', '.']
-images: ['eu.gcr.io/tt-jenkins/ttdocker:$_TT_BRANCH:latest']
+  args: ['build', '-t', 'eu.gcr.io/tt-jenkins/ttdocker:$_TT_BRANCH', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'eu.gcr.io/tt-jenkins/ttdocker:$_TT_BRANCH', 'eu.gcr.io/tt-jenkins/ttdocker:$_TT_BRANCH']
+images: ['eu.gcr.io/tt-jenkins/ttdocker:$_TT_BRANCH']
