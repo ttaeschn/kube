@@ -24,6 +24,19 @@ spec:
         run: ttapp
     spec:
       containers:
+      - env:
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              key: username
+              name: tt-db-credentials
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: password
+              name: tt-db-credentials
+        - name: DB_HOST
+          value: localhost:3306
       - image: eu.gcr.io/tt-jenkins/ttdocker:R1.0
         imagePullPolicy: Always
         name: ttapp
