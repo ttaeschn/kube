@@ -16,6 +16,6 @@ spec:
         run: ttapp
     spec:
       containers:
-        image: eu.gcr.io/tt-jenkins/ttdocker:R1.0
+      - image: eu.gcr.io/tt-jenkins/ttdocker:R1.0
         name: ttapp
         resources: {}
