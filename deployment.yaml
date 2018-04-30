@@ -37,7 +37,7 @@ spec:
               name: tt-db-credentials
         - name: DB_HOST
           value: localhost:3306
-      - image: eu.gcr.io/tt-jenkins/ttdocker:R1.0
+        image: eu.gcr.io/tt-jenkins/ttdocker:R1.0
         imagePullPolicy: Always
         name: ttapp
         ports:
