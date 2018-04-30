@@ -24,7 +24,7 @@ spec:
         run: ttapp
     spec:
       containers:
-       - env:
+      - env:
         - name: DB_USER
           valueFrom:
             secretKeyRef:
