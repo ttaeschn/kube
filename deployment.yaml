@@ -11,11 +11,13 @@ spec:
       run: ttapp
   template:
     metadata:
+       annotations:
+         date: "1525175992"
        labels:
         run: ttapp
     spec:
       containers:
-      - image: eu.gcr.io/tt-jenkins/ttdocker:R1.1
+      - image: eu.gcr.io/tt-jenkins/ttdocker:{{IMAGETAG}}
         imagePullPolicy: Always
         name: ttapp
         resources: {}
