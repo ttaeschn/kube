@@ -6,7 +6,6 @@ metadata:
   name: tt-deployment
   namespace: default
 spec:
-  progressDeadlineSeconds: 600
   selector:
     matchLabels:
       run: ttapp
