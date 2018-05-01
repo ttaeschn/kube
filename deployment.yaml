@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
        annotations:
-         date: "1525175992"
+         date: "{{DATE}}"
        labels:
         run: ttapp
     spec:
