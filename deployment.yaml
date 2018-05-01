@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - image: eu.gcr.io/tt-jenkins/ttdocker:R1.0
-        ImagePullPolicy: Always
+        imagePullPolicy: Always
         name: ttapp
         resources: {}
