@@ -1,32 +1,23 @@
-apiVersion: apps/v1beta1 # for versions before 1.9.0 use apps/v1beta2
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
+  labels:
+    run: ttapp
   name: tt-deployment
+  namespace: default
 spec:
   selector:
     matchLabels:
       run: ttapp
-  replicas: 1 # tells deployment to run 1 pods matching the template
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-    type: RollingUpdate
-  template: # create pods using pod definition in this template
+  template:
     metadata:
-      # unlike pod-nginx.yaml, the name is not included in the meta data as a unique name is
-      # generated from the deployment name
-      labels:
+       annotations:
+         date: "${DATE}"
+       labels:
         run: ttapp
     spec:
       containers:
       - image: eu.gcr.io/tt-jenkins/ttdocker:${GIT_COMMIT}
         imagePullPolicy: Always
         name: ttapp
-        ports:
-        - containerPort: 80
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      terminationGracePeriodSeconds: 30
+        resources: {}
