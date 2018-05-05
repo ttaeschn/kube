@@ -12,12 +12,12 @@ spec:
   template:
     metadata:
        annotations:
-         date: "{{DATE}}"
+         date: "${DATE}"
        labels:
         run: ttapp
     spec:
       containers:
-      - image: eu.gcr.io/tt-jenkins/ttdocker:{{IMAGETAG}}
+      - image: eu.gcr.io/tt-jenkins/ttdocker:!{GIT_COMMIT}
         imagePullPolicy: Always
         name: ttapp
         resources: {}
