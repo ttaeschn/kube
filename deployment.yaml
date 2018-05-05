@@ -20,7 +20,7 @@ spec:
         run: ttapp
     spec:
       containers:
-      - image: eu.gcr.io/tt-jenkins/ttdocker:latest
+      - image: eu.gcr.io/tt-jenkins/ttdocker:${TT_COMMIT}
         imagePullPolicy: Always
         name: ttapp
         ports:
