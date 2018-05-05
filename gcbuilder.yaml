@@ -1,8 +1,8 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'eu.gcr.io/tt-jenkins/ttdocker:$_TT_BRANCH', '.']
+  args: ['build', '-t', 'eu.gcr.io/tt-jenkins/ttdocker:$_TT_COMMIT', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['tag', 'eu.gcr.io/tt-jenkins/ttdocker:$_TT_BRANCH', 'eu.gcr.io/tt-jenkins/ttdocker:latest']
+  args: ['tag', 'eu.gcr.io/tt-jenkins/ttdocker:$_TT_COMMIT', 'eu.gcr.io/tt-jenkins/ttdocker:$_TT_BRANCH']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['tag', 'eu.gcr.io/tt-jenkins/ttdocker:latest', 'eu.gcr.io/tt-jenkins/ttdocker:torsten']
-images: ['eu.gcr.io/tt-jenkins/ttdocker:$_TT_BRANCH', 'eu.gcr.io/tt-jenkins/ttdocker:latest', 'eu.gcr.io/tt-jenkins/ttdocker:torsten']
+  args: ['tag', 'eu.gcr.io/tt-jenkins/ttdocker:$_TT_COMMIT', 'eu.gcr.io/tt-jenkins/ttdocker:$_TT_BRANCH']
+images: ['eu.gcr.io/tt-jenkins/ttdocker:$_TT_COMMIT', 'eu.gcr.io/tt-jenkins/ttdocker:$_TT_BRANCH']
