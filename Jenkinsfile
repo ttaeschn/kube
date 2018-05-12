@@ -5,6 +5,8 @@ node
       //def scmVars = checkout([$class: 'GitSCM', branches: [[name: '*/R1.0']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/ttaeschn/kube']]])
       //def commitHash = scmVars.GIT_COMMIT
       sh ('env')
+      shortCommit = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
+      echo(shortCommit)
       echo(scmVars.GIT_BRANCH)
       //def commitBranch = scmVars.GIT_BRANCH
       def String[] str = (scmVars.GIT_BRANCH).split('/');              
